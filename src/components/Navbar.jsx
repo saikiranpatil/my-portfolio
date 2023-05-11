@@ -1,0 +1,77 @@
+import React, { useState } from "react";
+import { close, menu } from "../assets";
+import { navLinks } from "../constants";
+import styles from "./style";
+
+const Navbar = ({ resumeLink }) => {
+  const [toggle, setToggle] = useState(false);
+
+  return (
+    <nav
+      className={`w-full flex justify-between items-center navbar h-[100px]`}
+    >
+      <div className="rounded-[3px] border-[2px] border-primary flex justify-center items-center">
+        <span className="cursor-pointer flex flex-1 title-font font-semibold font-kanit text-2xl text-white px-1 bg-primary/[0.1] hover:bg-primary/20 rounded-[3px]">
+          S
+          <div className="ml-[2px]" />P
+        </span>
+      </div>
+
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+        {navLinks.map((nav, index) => (
+          <li
+            key={nav.id}
+            className={`font-poppins
+          font-normal
+          cursor-pointer
+          text-[16px]
+          ml-10
+          text-dimWhite/90 hover:text-primary`}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+          </li>
+        ))}
+        <li>
+          <a href={resumeLink} target="_blank" rel="noopener noreferrer">
+            <button className="bg-primary/[0.1] hover:bg-primary/20 ml-10 text-dimWhite/90 font-normal py-2 px-4 border-[2px] border-primary rounded">
+              Resume
+            </button>
+          </a>
+        </li>
+      </ul>
+
+      <div className="sm:hidden flex flex-1 justify-end items-center">
+        <img
+          src={toggle ? close : menu}
+          alt="menu"
+          className="w-[28px] h-[28px] object-contain"
+          onClick={() => setToggle((prev) => !prev)}
+        />
+
+        <div
+          className={`${toggle ? "flex" : "hidden"} p-6 bg-solidBlue
+      absolute top-20 right-0 mx-4 my-2
+      min-w-[140px] rounded-xl sidebar z-[4]`}
+        >
+          <ul className="list-none flex flex-col justify-end items-center flex-1">
+            {navLinks.map((nav, index) => (
+              <li
+                key={nav.id}
+                className={`font-poppins
+              font-normal
+              cursor-pointer
+              text-[16px]
+              ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}
+              font-white`}
+              >
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

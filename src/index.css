@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Poppins&family=JetBrains+Mono&family=Roboto&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  transition: all 0.25s ease-out;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #7d8f8b;
+  background: #8892B0;
+  background: #111;
+  min-height: 100vh;
+}
