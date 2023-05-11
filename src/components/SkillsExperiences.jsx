@@ -3,6 +3,7 @@ import styles from "./style";
 import { skills } from "../constants";
 import { BiLink } from "react-icons/bi";
 import { urlFor, client } from "../client";
+import { motion } from "framer-motion";
 
 const SkillsExperiences = () => {
   const [experiences, setExperiences] = useState([]);
@@ -20,12 +21,20 @@ const SkillsExperiences = () => {
       className={`${styles.flexCenter} ${styles.paddingY} max-w-[1100px] m-auto`}
     >
       <div className={`${styles.flexCenter} flex-wrap w-full`}>
-        <h2 className={`${styles.heading2}`}>Skills & Experiences</h2>
+        <motion.h2
+          whileInView={{ y: [-50, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+          className={`${styles.heading2}`}
+        >
+          Skills & Experiences
+        </motion.h2>
         <div className="flex md:flex-row flex-col justify-between w-full">
           <div className={`flex flex-col justify-between ${styles.paddingY}`}>
             <div className="grid grid-cols-3 gap-8 w-full">
               {skills.map((item) => (
-                <div
+                <motion.div
+                  whileInView={{ y: [-40, 0],opacity: [0, 1] }}
+                  transition={{ duration: 0.5 }}
                   key={item.id}
                   className={`flex flex-col ${styles.flexCenter}`}
                 >
@@ -35,13 +44,15 @@ const SkillsExperiences = () => {
                   <p className="font-poppins text-[12px] text-normal text-dullGray mt-2">
                     {item.name}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
           <div className={`flex flex-col ${styles.paddingY} max-w-[500px]`}>
             {experiences.map((experience) => (
-              <div
+              <motion.div
+                whileInView={{ y: [-40, 0],opacity: [0, 1] }}
+                transition={{ duration: 1.5 }}
                 key={experience.organisation}
                 className="flex flex-row gap-4 items-start"
               >
@@ -66,9 +77,7 @@ const SkillsExperiences = () => {
                       <span className="text-white/60 text-[12px]">
                         {role.duration}
                       </span>
-                      <p className="mt-2 text-dullGray">
-                        {role.desc}
-                      </p>
+                      <p className="mt-2 text-dullGray">{role.desc}</p>
                       {role.link && (
                         <a
                           href={role.link}
@@ -81,7 +90,7 @@ const SkillsExperiences = () => {
                     </li>
                   ))}
                 </ol>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

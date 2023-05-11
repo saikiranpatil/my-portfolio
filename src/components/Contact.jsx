@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./style";
 import { client } from "../client";
+import { motion } from "framer-motion";
 
 const contact = () => {
   const [formData, setFormData] = useState({
@@ -43,9 +44,17 @@ const contact = () => {
       className={`${styles.flexCenter} ${styles.paddingY}  max-w-[1100px] m-auto`}
     >
       <div className={`${styles.flexCenter} flex-wrap w-full`}>
-        <h2 className={`${styles.heading2}`}>Contact Us</h2>
+        <motion.h2
+          whileInView={{ y: [-40, 0], opacity: [0, 1] }}
+          transition={{ duration: 0.5 }}
+          className={`${styles.heading2}`}
+        >
+          Contact Us
+        </motion.h2>
         {isFormSubmitted ? (
-          <div
+          <motion.div
+            whileInView={{ y: [-50, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className={`flex flex-col ${styles.paddingY} w-full justify-center max-w-lg`}
           >
             <h4 className={`${styles.heading4} font-primary text-center py-6`}>
@@ -66,9 +75,11 @@ const contact = () => {
                 Submit Another Message
               </button>
             </div>
-          </div>
+          </motion.div>
         ) : (
-          <form
+          <motion.form
+            whileInView={{ y: [-50, 0], opacity: [0, 1] }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             className={`flex flex-col ${styles.paddingY} w-full justify-center max-w-lg`}
           >
             <div className="flex flex-wrap -mx-3 mb-2">
@@ -127,7 +138,7 @@ const contact = () => {
                 {loading ? "Sending..." : "Send Message"}
               </button>
             </div>
-          </form>
+          </motion.form>
         )}
       </div>
     </section>

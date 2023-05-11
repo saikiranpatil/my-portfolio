@@ -3,7 +3,7 @@ import styles from "./style";
 import { BiLink } from "react-icons/bi";
 import { BsGithub } from "react-icons/bs";
 import { urlFor, client } from "../client";
-import "react-tooltip/dist/react-tooltip.css";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -21,12 +21,20 @@ const Projects = () => {
       className={`${styles.flexCenter} ${styles.paddingY}  max-w-[1100px] m-auto`}
     >
       <div className={`${styles.flexCenter} flex-wrap w-full`}>
-        <h2 className={`${styles.heading2}`}>Projects</h2>
+        <motion.h2
+          whileInView={{ y: [-50, 0] }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className={`${styles.heading2}`}
+        >
+          Projects
+        </motion.h2>
         <div
           className={`flex flex-col gap-16 ${styles.paddingY} w-full justify-center`}
         >
           {projects.map((project, index) => (
-            <div
+            <motion.div
+            whileInView={{ y: [-40, 0],opacity: [0, 1] }}
+            transition={{ duration: 0.5 }}
               key={project.name}
               className={`flex ${
                 index % 2 == 0 ? "sm:flex-row" : "sm:flex-row-reverse"
@@ -83,7 +91,7 @@ const Projects = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
           {/* <div className="flex flex-wrap justify-center -mx-3 mb-2">
             <button className="bg-primary hover:bg-primary/80 ml-10 text-darkGreen font-normal py-2 px-4 border-[2px] border-primary rounded">
