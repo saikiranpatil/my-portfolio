@@ -14,7 +14,7 @@ const Navbar = ({ resumeLink }) => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          duration: 0.2,
+          duration: 0.15,
           ease: "easeIn",
         }}
         className="rounded-[3px] border-[2px] border-primary flex justify-center items-center"
@@ -31,8 +31,8 @@ const Navbar = ({ resumeLink }) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: index * 0.2 + 0.5,
-              duration: 0.2,
+              delay: index * 0.15 + 0.15,
+              duration: 0.15,
               ease: "easeIn",
             }}
             key={nav.id}
@@ -50,8 +50,8 @@ const Navbar = ({ resumeLink }) => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            delay: navLinks.length * 0.25 + 0.5,
-            duration: 0.25,
+            delay: navLinks.length * 0.15 + 0.15,
+            duration: 0.15,
             ease: "easeIn",
           }}
         >

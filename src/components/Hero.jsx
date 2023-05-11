@@ -19,7 +19,7 @@ const Hero = ({ about }) => {
           transition={{
             duration: 0.15,
             ease: "easeIn",
-            delay: 2,
+            delay: 1,
           }}
           className="flex flex-row items-center py-[6px]"
         >
@@ -32,7 +32,7 @@ const Hero = ({ about }) => {
           transition={{
             duration: 0.15,
             ease: "easeIn",
-            delay: 2.15,
+            delay: 1.15,
           }}
           className="flex flex-row justify-between items-center w-full"
         >
@@ -46,7 +46,7 @@ const Hero = ({ about }) => {
           transition={{
             duration: 0.15,
             ease: "easeIn",
-            delay: 2.3,
+            delay: 1.3,
           }}
           className={`${styles.paragraph}`}
         >
@@ -58,7 +58,7 @@ const Hero = ({ about }) => {
           transition={{
             duration: 0.15,
             ease: "easeIn",
-            delay: 2.45,
+            delay: 1.45,
           }}
           className="flex flex-row mt-4"
         >
@@ -84,7 +84,7 @@ const Hero = ({ about }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            delay: 2.6,
+            delay: 1.6,
             duration: 0.5,
             ease: [0, 0.71, 0.2, 1.01],
           }}
@@ -98,7 +98,7 @@ const Hero = ({ about }) => {
         </motion.div>
         <motion.div
           whileInView={{ opacity: [0, 1] }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 1.5 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 1.2 }}
           className="absolute w-[75%] h-[75%] right-20 bottom-20 rounded-full bg-gradient-to-r from-srimary to-transparent blur-[100px]"
         />
       </div>
