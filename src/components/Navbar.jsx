@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { close, menu } from "../assets";
 import { navLinks } from "../constants";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { CgClose } from "react-icons/cg";
 
 const Navbar = ({ resumeLink }) => {
   const [toggle, setToggle] = useState(false);
@@ -64,12 +65,19 @@ const Navbar = ({ resumeLink }) => {
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 0.9 }}
+          transition={{
+            delay: navLinks.length * 0.15 + 0.15,
+            duration: 0.15,
+            ease: "easeIn",
+          }}
           onClick={() => setToggle((prev) => !prev)}
-        />
+        >
+          {toggle ? <CgClose size={34} /> : <HiMenuAlt3 size={34} />}
+        </motion.div>
 
         <div
           className={`${toggle ? "flex" : "hidden"} p-6 bg-solidBlue
