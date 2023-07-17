@@ -16,6 +16,7 @@ const Hero = ({ about }) => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.15,
             ease: "easeIn",
@@ -29,6 +30,7 @@ const Hero = ({ about }) => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.15,
             ease: "easeIn",
@@ -43,6 +45,7 @@ const Hero = ({ about }) => {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.15,
             ease: "easeIn",
@@ -55,6 +58,7 @@ const Hero = ({ about }) => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.15,
             ease: "easeIn",
@@ -83,9 +87,10 @@ const Hero = ({ about }) => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{
-            delay: 1.6,
-            duration: 0.5,
+            delay: 1,
+            duration: 0.1,
             ease: [0, 0.71, 0.2, 1.01],
           }}
           className="rounded-full h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[400px] lg:w-[400px] overflow-hidden ring ring-dullGray hover:ring-primary"
@@ -99,7 +104,8 @@ const Hero = ({ about }) => {
         <motion.div
           whileInView={{ opacity: [0, 1] }}
           transition={{ duration: 0.4, ease: "easeOut", delay: 1.2 }}
-          className="absolute w-[75%] h-[75%] right-20 bottom-20 rounded-full bg-gradient-to-r from-srimary to-transparent blur-[100px]"
+          viewport={{ once: true }}
+          className="absolute w-[75%] h-[75%] right-20 bottom-20 rounded-full bg-gradient-to-r from-primary to-transparent blur-[100px]"
         />
       </div>
     </section>

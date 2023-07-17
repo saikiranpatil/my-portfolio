@@ -18,7 +18,8 @@ const Navbar = ({ resumeLink }) => {
           duration: 0.15,
           ease: "easeIn",
         }}
-        className="rounded-[3px] border-[2px] border-primary flex justify-center items-center"
+        viewport={{ once: true }}
+        className="rounded-[3px] border-[2px] border-primary/[0.5] flex justify-center items-center"
       >
         <span className="cursor-pointer flex flex-1 title-font font-semibold font-kanit text-2xl text-white px-1 bg-primary/[0.1] hover:bg-primary/20 rounded-[3px]">
           S
@@ -57,7 +58,7 @@ const Navbar = ({ resumeLink }) => {
           }}
         >
           <a href={resumeLink} target="_blank" rel="noopener noreferrer">
-            <button className="bg-primary/[0.1] hover:bg-primary/20 ml-10 text-dimWhite/90 font-normal py-2 px-4 border-[2px] border-primary rounded">
+            <button className="bg-primary/[0.1] hover:bg-primary/20 ml-10 text-dimWhite/90 font-normal py-2 px-4 border-[2px] border-primary/[0.1] rounded">
               Resume
             </button>
           </a>
@@ -69,6 +70,7 @@ const Navbar = ({ resumeLink }) => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 0.9 }}
+          viewport={{ once: true }}
           transition={{
             delay: navLinks.length * 0.15 + 0.15,
             duration: 0.15,

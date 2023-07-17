@@ -48,6 +48,7 @@ const contact = () => {
           whileInView={{ y: [-40, 0], opacity: [0, 1] }}
           transition={{ duration: 0.5 }}
           className={`${styles.heading2}`}
+          viewport={{ once: true }}
         >
           Contact Us
         </motion.h2>
@@ -55,6 +56,7 @@ const contact = () => {
           <motion.div
             whileInView={{ y: [-50, 0], opacity: [0, 1] }}
             transition={{ duration: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
             className={`flex flex-col ${styles.paddingY} w-full justify-center max-w-lg`}
           >
             <h4 className={`${styles.heading4} font-primary text-center py-6`}>
@@ -80,12 +82,13 @@ const contact = () => {
           <motion.form
             whileInView={{ y: [-50, 0], opacity: [0, 1] }}
             transition={{ duration: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
             className={`flex flex-col ${styles.paddingY} w-full justify-center max-w-lg`}
           >
             <div className="flex flex-wrap -mx-3 mb-2">
               <div className="w-full px-3">
                 <input
-                  className="appearance-none block w-full bg-primary/10 text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/20 leading-tight focus:outline-none focus:bg-primary/5"
+                  className="appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5"
                   id="name"
                   name="name"
                   type="text"
@@ -101,7 +104,7 @@ const contact = () => {
             <div className="flex flex-wrap -mx-3 mb-2">
               <div className="w-full px-3">
                 <input
-                  className="appearance-none block w-full bg-primary/10 text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/20 leading-tight focus:outline-none focus:bg-primary/5"
+                  className="appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5"
                   id="email"
                   name="email"
                   type="email"
@@ -117,7 +120,7 @@ const contact = () => {
             <div className="flex flex-wrap -mx-3 mb-2">
               <div className="w-full px-3">
                 <textarea
-                  className="appearance-none block w-full bg-primary/10 text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/20 leading-tight focus:outline-none focus:bg-primary/5 h-[170px]"
+                  className="appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 h-[170px]"
                   id="grid-password"
                   name="message"
                   type="text"
@@ -132,7 +135,7 @@ const contact = () => {
             </div>
             <div className="flex flex-wrap justify-center -mx-3 mb-2">
               <button
-                className="bg-primary hover:bg-primary/80 ml-10 text-darkGreen font-semiBold py-2 px-4 border-[2px] border-primary rounded"
+                className="bg-primary text-bgColor font-semiBold py-2 px-4 rounded shadow-primary/50 shadow-lg hover:shadow"
                 onClick={handleFormSubmit}
               >
                 {loading ? "Sending..." : "Send Message"}

@@ -17,8 +17,29 @@ html {
 }
 
 body {
-  background: #7d8f8b;
-  background: #8892B0;
-  background: #111;
   min-height: 100vh;
+}
+
+.project-image::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1000ms;
+}
+
+.project-image::after {
+  background: rgba(0, 255, 170, 0.25);
+  mix-blend-mode: multiply;
+}
+
+.project-image:hover img{
+  transform: scale(1.25);
+}
+
+.project-image:hover::after{
+  opacity: 0;
 }

@@ -24,22 +24,24 @@ const SkillsExperiences = () => {
         <motion.h2
           whileInView={{ y: [-50, 0], opacity: [0, 1] }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className={`${styles.heading2}`}
         >
           Skills & Experiences
         </motion.h2>
-        <div className="flex md:flex-row flex-col justify-between w-full">
-          <div className={`flex flex-col justify-between ${styles.paddingY}`}>
-            <div className="grid grid-cols-3 gap-8 w-full">
+        <div className="flex md:flex-row flex-col justify-between w-full items-center md:items-start">
+          <div className={`flex flex-col ${styles.paddingY}`}>
+            <div className="grid md:grid-cols-5 grid-cols-3 md:gap-8 gap-4 w-[500px]">
               {skills.map((item) => (
                 <motion.div
-                  whileInView={{ y: [-40, 0],opacity: [0, 1] }}
+                  whileInView={{ y: [-40, 0], opacity: [0, 1] }}
                   transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
                   key={item.id}
                   className={`flex flex-col ${styles.flexCenter}`}
                 >
-                  <span className="bg-primary/[0.1] p-4 rounded-full border-[2px] border-primary/[0.05]">
-                    <item.icon className="fill-dimWhite hover:fill-primary text-[30px]" />
+                  <span className="bg-primary/[0.05] p-4 rounded-full border-[2px] border-primary/[0.1]">
+                    <item.icon className="fill-dimWhite text-[30px]" />
                   </span>
                   <p className="font-poppins text-[12px] text-normal text-dullGray mt-2">
                     {item.name}
@@ -51,21 +53,22 @@ const SkillsExperiences = () => {
           <div className={`flex flex-col ${styles.paddingY} max-w-[500px]`}>
             {experiences.map((experience) => (
               <motion.div
-                whileInView={{ y: [-40, 0],opacity: [0, 1] }}
+                whileInView={{ y: [-40, 0], opacity: [0, 1] }}
                 transition={{ duration: 1.5 }}
+                viewport={{ once: true }}
                 key={experience.organisation}
                 className="flex flex-row gap-4 items-start"
               >
                 <div className="flex flex-row items-center">
-                  <div className="rounded-full w-[70px] bg-primary/[0.1] border-[2px] border-primary/[0.05]">
+                  <div className="rounded-full w-[70px] bg-primary/[0.05] border-[2px] border-primary/[0.1]">
                     <img
                       src={urlFor(experience.logo).url()}
                       alt={experience.organisation}
-                      className="max-w-[70px] max-h-[70px] p-3"
+                      className="max-w-[70px] max-h-[70px] p-2 aspect-square"
                     />
                   </div>
                 </div>
-                <ol className="relative">
+                <ol className="relative w-full">
                   <h4 className={`${styles.heading4} my-5`}>
                     {experience.organisation}
                   </h4>
