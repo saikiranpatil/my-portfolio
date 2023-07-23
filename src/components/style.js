@@ -3,7 +3,7 @@ const styles = {
 
     heading2: "font-poppins font-bold xs:text-[55px] text-[40px] text-dimWhite xs:leading-[76.8px] leading-[66.8px] w-full text-center",
     heading4: "font-poppins text-primary text-[20px] md:text-[26px] xs:leading-[30.8px] leading-[25.8px] w-full align-left",
-    paragraph: "font-poppins font-normal text-dullGray text-[18px]",
+    paragraph: "font-poppins font-normal text-slate text-[18px]",
 
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
@@ -15,7 +15,12 @@ const styles = {
     marginX: "sm:mx-12 mx-6",
     marginY: "sm:my-12 my-6",
 
-    section: "container mx-auto flex px-5 py-8 flex-col"
+    section: "container mx-auto flex px-5 py-8 flex-col",
+
+    card: "bg-primary/[0.05] border-[2px] border-primary/[0.1]",
+
+    primaryBtn: "bg-primary/[0.08] border-[2px] border-primary/[0.1] hover:bg-primary/[0.12] text-dimWhite/90 font-normal py-2 px-4 ml-10 rounded",
+    secondaryBtn: "bg-primary/90 hover:bg-primary text-darkColor font-semiBold py-2 px-4 rounded"
 };
 
 export const layout = {

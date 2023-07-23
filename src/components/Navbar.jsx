@@ -3,6 +3,7 @@ import { navLinks } from "../constants";
 import { motion } from "framer-motion";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
+import styles from "./style";
 
 const Navbar = ({ resumeLink }) => {
   const [toggle, setToggle] = useState(false);
@@ -58,7 +59,7 @@ const Navbar = ({ resumeLink }) => {
           }}
         >
           <a href={resumeLink} target="_blank" rel="noopener noreferrer">
-            <button className="bg-primary/[0.1] hover:bg-primary/20 ml-10 text-dimWhite/90 font-normal py-2 px-4 border-[2px] border-primary/[0.1] rounded">
+            <button className={`${styles.primaryBtn}`}>
               Resume
             </button>
           </a>

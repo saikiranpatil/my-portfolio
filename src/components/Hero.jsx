@@ -93,7 +93,7 @@ const Hero = ({ about }) => {
             duration: 0.1,
             ease: [0, 0.71, 0.2, 1.01],
           }}
-          className="rounded-full h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[400px] lg:w-[400px] overflow-hidden ring ring-dullGray hover:ring-primary"
+          className="rounded-full h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[400px] lg:w-[400px] overflow-hidden ring ring-slate hover:ring-primary"
         >
           <img
             src={urlFor(about.imgUrl).url()}

@@ -24,7 +24,7 @@ function App() {
   if (about.length == 0) return;
 
   return (
-    <div className="w-full bg-bgColor overflow-hidden">
+    <div className="w-full bg-darkColor overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Navbar resumeLink={about[0].resumeLink} />

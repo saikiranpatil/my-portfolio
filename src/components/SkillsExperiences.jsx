@@ -40,10 +40,10 @@ const SkillsExperiences = () => {
                   key={item.id}
                   className={`flex flex-col ${styles.flexCenter}`}
                 >
-                  <span className="bg-primary/[0.05] p-4 rounded-full border-[2px] border-primary/[0.1]">
+                  <span className={`${styles.card} p-4 rounded-full`}>
                     <item.icon className="fill-dimWhite text-[30px]" />
                   </span>
-                  <p className="font-poppins text-[12px] text-normal text-dullGray mt-2">
+                  <p className="font-poppins text-[12px] text-normal text-slate mt-2">
                     {item.name}
                   </p>
                 </motion.div>
@@ -60,7 +60,7 @@ const SkillsExperiences = () => {
                 className="flex flex-row gap-4 items-start"
               >
                 <div className="flex flex-row items-center">
-                  <div className="rounded-full w-[70px] bg-primary/[0.05] border-[2px] border-primary/[0.1]">
+                  <div className={`rounded-full w-[70px] ${styles.card}`}>
                     <img
                       src={urlFor(experience.logo).url()}
                       alt={experience.organisation}
@@ -80,14 +80,14 @@ const SkillsExperiences = () => {
                       <span className="text-white/60 text-[12px]">
                         {role.duration}
                       </span>
-                      <p className="mt-2 text-dullGray">{role.desc}</p>
+                      <p className="mt-2 text-slate">{role.desc}</p>
                       {role.link && (
                         <a
                           href={role.link}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <BiLink className="fill-dullGray hover:fill-primary mt-1" />
+                          <BiLink className="fill-slate hover:fill-primary mt-1" />
                         </a>
                       )}
                     </li>
