@@ -12,6 +12,10 @@
   color: #fff;
 }
 
+textarea:focus, input:focus{
+  outline: none;
+}
+
 html {
   scroll-behavior: smooth;
 }

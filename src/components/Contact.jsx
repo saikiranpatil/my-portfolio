@@ -59,12 +59,12 @@ const contact = () => {
             viewport={{ once: true }}
             className={`flex flex-col ${styles.paddingY} w-full justify-center max-w-lg`}
           >
-            <h4 className={`${styles.heading4} font-primary text-center py-6`}>
-              Thank you for gertting in touch!
+            <h4 className={`${styles.heading4} text-primary text-center py-6`}>
+              Thank you for getting in touch!
             </h4>
             <div className="flex flex-wrap justify-center -mx-3 mb-2">
               <button
-                className="bg-primary hover:bg-primary/80 ml-10 text-darkGreen font-semiBold py-2 px-4 border-[2px] border-primary rounded"
+                className="bg-primary/[0.1] hover:bg-primary/20 ml-10 text-dimWhite/90 font-normal py-2 px-4 border-[2px] border-primary/[0.1] rounded"
                 onClick={() => {
                   setFormData({
                     name: "",
@@ -88,7 +88,7 @@ const contact = () => {
             <div className="flex flex-wrap -mx-3 mb-2">
               <div className="w-full px-3">
                 <input
-                  className="appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5"
+                  className="appearance-none block w-full bg-primary/[0.05] text-primary/80 placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5"
                   id="name"
                   name="name"
                   type="text"
@@ -135,7 +135,7 @@ const contact = () => {
             </div>
             <div className="flex flex-wrap justify-center -mx-3 mb-2">
               <button
-                className="bg-primary text-bgColor font-semiBold py-2 px-4 rounded shadow-primary/50 shadow-lg hover:shadow"
+                className="bg-primary hover:bg-primary/90 text-bgColor font-semiBold py-2 px-4 rounded"
                 onClick={handleFormSubmit}
               >
                 {loading ? "Sending..." : "Send Message"}

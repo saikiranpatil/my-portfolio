@@ -31,7 +31,7 @@ const SkillsExperiences = () => {
         </motion.h2>
         <div className="flex md:flex-row flex-col justify-between w-full items-center md:items-start">
           <div className={`flex flex-col ${styles.paddingY}`}>
-            <div className="grid md:grid-cols-5 grid-cols-3 md:gap-8 gap-4 max-w-[500px]">
+            <div className="grid sm:grid-cols-3 md:grid-cols-5 grid-cols-2 md:gap-8 gap-4 sm:min-w-[500px] max-w-none">
               {skills.map((item) => (
                 <motion.div
                   whileInView={{ y: [-40, 0], opacity: [0, 1] }}
