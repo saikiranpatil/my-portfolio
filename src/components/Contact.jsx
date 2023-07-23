@@ -3,7 +3,7 @@ import styles from "./style";
 import { client } from "../client";
 import { motion } from "framer-motion";
 
-const contact = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,17 +11,54 @@ const contact = () => {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
 
   const { name, email, message } = formData;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-
     setFormData({ ...formData, [name]: value });
+    setErrors({ ...errors, [name]: false });
+  };
+
+  const validateForm = () => {
+    let hasErrors = false;
+    const newErrors = {
+      name: false,
+      email: false,
+      message: false,
+    };
+
+    if (name.trim() === "") {
+      newErrors.name = true;
+      hasErrors = true;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      newErrors.email = true;
+      hasErrors = true;
+    }
+
+    if (message.trim() === "") {
+      newErrors.message = true;
+      hasErrors = true;
+    }
+
+    setErrors(newErrors);
+    return !hasErrors;
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
 
     setLoading(true);
 
@@ -55,7 +92,7 @@ const contact = () => {
               Thank you for getting in touch!
             </h4>
             <div
-              class="flex flex-wrap justify-center -mx-3 mb-2"
+              className="flex flex-wrap justify-center -mx-3 mb-2"
               onClick={() => {
                 setFormData({
                   name: "",
@@ -89,7 +126,9 @@ const contact = () => {
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
                   <input
-                    className="appearance-none block w-full bg-primary/[0.05] text-primary/80 placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5"
+                    className={`appearance-none block w-full bg-primary/[0.05] text-primary/80 placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 ${
+                      errors.name ? "border-red-500" : ""
+                    }`}
                     id="name"
                     name="name"
                     type="text"
@@ -97,15 +136,19 @@ const contact = () => {
                     value={formData.formName}
                     onChange={handleInputChange}
                   />
-                  <p className="text-red-500 text-xs italic opacity-0">
-                    Please fill out this field.
-                  </p>
+                  {errors.name && (
+                    <p className="text-red-500 text-xs italic">
+                      Please fill out this field.
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
                   <input
-                    className="appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5"
+                    className={`appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 ${
+                      errors.email ? "border-red-500" : ""
+                    }`}
                     id="email"
                     name="email"
                     type="email"
@@ -113,15 +156,19 @@ const contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                   />
-                  <p className="text-red-500 text-xs italic opacity-0">
-                    Please fill out this field.
-                  </p>
+                  {errors.email && (
+                    <p className="text-red-500 text-xs italic">
+                      Please enter a valid email address.
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
                   <textarea
-                    className="appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 h-[170px]"
+                    className={`appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 h-[170px] ${
+                      errors.message ? "border-red-500" : ""
+                    }`}
                     id="grid-password"
                     name="message"
                     type="text"
@@ -129,14 +176,15 @@ const contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                   />
-                  <p className="text-red-500 text-xs italic opacity-0">
-                    Please fill out this field.
-                  </p>
+                  {errors.message && (
+                    <p className="text-red-500 text-xs italic">
+                      Please fill out this field.
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap justify-center -mx-3 mb-2">
                 <button
-                  // className="bg-primary hover:bg-primary/90 text-darkColor font-semiBold py-2 px-4 rounded"
                   className={`${styles.secondaryBtn}`}
                   onClick={handleFormSubmit}
                 >
@@ -151,4 +199,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
