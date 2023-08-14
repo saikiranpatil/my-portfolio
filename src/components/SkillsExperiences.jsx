@@ -22,8 +22,9 @@ const SkillsExperiences = () => {
     >
       <div className={`${styles.flexCenter} flex-wrap w-full`}>
         <motion.h2
-          whileInView={{ y: [-50, 0], opacity: [0, 1] }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
           className={`${styles.heading2}`}
         >
@@ -34,16 +35,21 @@ const SkillsExperiences = () => {
             <div className="grid sm:grid-cols-3 md:grid-cols-5 grid-cols-2 md:gap-8 gap-4 sm:min-w-[500px] max-w-none">
               {skills.map((item) => (
                 <motion.div
-                  whileInView={{ y: [-40, 0], opacity: [0, 1] }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   viewport={{ once: true }}
                   key={item.id}
                   className={`flex flex-col ${styles.flexCenter}`}
                 >
-                  <span className={`${styles.card} p-4 rounded-full`}>
+                  <span
+                    className={`${styles.card} p-4 rounded-full`}
+                  >
                     <item.icon className="fill-dimWhite text-[30px]" />
                   </span>
-                  <p className="font-poppins text-[12px] text-normal text-slate mt-2">
+                  <p
+                    className="font-poppins text-[12px] text-normal text-slate mt-2"
+                  >
                     {item.name}
                   </p>
                 </motion.div>
@@ -53,8 +59,9 @@ const SkillsExperiences = () => {
           <div className={`flex flex-col ${styles.paddingY} max-w-[500px]`}>
             {experiences.map((experience) => (
               <motion.div
-                whileInView={{ y: [-40, 0], opacity: [0, 1] }}
-                transition={{ duration: 1.5 }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 key={experience.organisation}
                 className="flex flex-row gap-4 items-start"

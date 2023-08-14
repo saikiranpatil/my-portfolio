@@ -22,8 +22,9 @@ const Projects = () => {
     >
       <div className={`${styles.flexCenter} flex-wrap w-full`}>
         <motion.h2
-          whileInView={{ y: [-50, 0] }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
           className={`${styles.heading2}`}
         >
@@ -34,8 +35,9 @@ const Projects = () => {
         >
           {projects.map((project, index) => (
             <motion.div
-              whileInView={{ y: [-40, 0], opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
               key={project.name}
               className={`flex ${index % 2 == 0 ? "sm:flex-row" : "sm:flex-row-reverse"

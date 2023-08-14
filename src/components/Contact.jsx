@@ -110,25 +110,26 @@ const Contact = () => {
         ) : (
           <>
             <motion.h2
-              whileInView={{ y: [-40, 0], opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className={`${styles.heading2}`}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
+              className={`${styles.heading2}`}
             >
               Contact Us
             </motion.h2>
-            <motion.form
-              whileInView={{ y: [-50, 0], opacity: [0, 1] }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              viewport={{ once: true }}
+            <form
               className={`flex flex-col ${styles.paddingY} w-full justify-center max-w-lg`}
             >
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
-                  <input
-                    className={`appearance-none block w-full bg-primary/[0.05] text-primary/80 placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 ${
-                      errors.name ? "border-red-500" : ""
-                    }`}
+                  <motion.input
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className={`appearance-none block w-full bg-primary/[0.05] text-primary/80 placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 ${errors.name ? "border-red-500" : ""
+                      }`}
                     id="name"
                     name="name"
                     type="text"
@@ -145,10 +146,13 @@ const Contact = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
-                  <input
-                    className={`appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 ${
-                      errors.email ? "border-red-500" : ""
-                    }`}
+                  <motion.input
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className={`appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 ${errors.email ? "border-red-500" : ""
+                      }`}
                     id="email"
                     name="email"
                     type="email"
@@ -165,10 +169,13 @@ const Contact = () => {
               </div>
               <div className="flex flex-wrap -mx-3 mb-2">
                 <div className="w-full px-3">
-                  <textarea
-                    className={`appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 h-[170px] ${
-                      errors.message ? "border-red-500" : ""
-                    }`}
+                  <motion.textarea
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className={`appearance-none block w-full bg-primary/[0.05] text-primary placeholder-primary/60 rounded py-3 px-4 mb-3 border border-primary/10 leading-tight focus:outline-none focus:bg-primary/5 h-[170px] ${errors.message ? "border-red-500" : ""
+                      }`}
                     id="grid-password"
                     name="message"
                     type="text"
@@ -184,14 +191,18 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex flex-wrap justify-center -mx-3 mb-2">
-                <button
+                <motion.button
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true }}
                   className={`${styles.secondaryBtn}`}
                   onClick={handleFormSubmit}
                 >
                   {loading ? "Sending..." : "Send Message"}
-                </button>
+                </motion.button>
               </div>
-            </motion.form>
+            </form>
           </>
         )}
       </div>
