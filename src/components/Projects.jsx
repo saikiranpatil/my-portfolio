@@ -40,7 +40,7 @@ const Projects = () => {
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
               key={project.name}
-              className={`relative flex ${index % 2 == 0 ? "flex-row-reverse" : "flex-row"} items-center justify-between rounded-lg gap-6 max-w-[450px] sm:max-w-none p-2 mb-8 bg-primary/[0.05] border border-primary/[0.1]`}
+              className={`relative flex ${index % 2 == 0 ? "sm:flex-row-reverse" : "sm:flex-row"} flex-col items-center justify-between rounded-lg gap-6 p-2 mb-8 bg-primary/[0.05] border border-primary/[0.1]`}
             >
               <div className="overflow-hidden rounded-lg project-image relative">
                 <img
@@ -49,7 +49,7 @@ const Projects = () => {
                   className="hover:scale-125 transition-all duration-500 object-cover w-full cursor-pointer aspect-[4/3]"
                 />
               </div>
-              <div className="relative p-4 rounded-lg w-[100vw]">
+              <div className="relative p-4 rounded-lg sm:w-[100vw]">
                 <h6 className="text-primary text-[14px] font-semibold">
                   {project.category}
                 </h6>
