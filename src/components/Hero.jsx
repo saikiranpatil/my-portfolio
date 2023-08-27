@@ -12,7 +12,7 @@ const Hero = ({ about }) => {
       id="home"
       className={`max-w-[1100px] m-auto flex md:flex-row flex-col-reverse md:px-10 md:py-24`}
     >
-      <div className={`flex-1 ${styles.flexStart} flex-col`}>
+      <div className={`flex-1 ${styles.flexStart} flex-col items-center sm:items-start`}>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const Hero = ({ about }) => {
           }}
           className="flex flex-row justify-between items-center w-full"
         >
-          <h1 className="flex-1 font-poppins font-bold ss:text-[72px] text-[52px] text-white">
+          <h1 className="flex-1 font-poppins font-bold ss:text-[72px] text-[42px] text-white text-center sm:text-left sm:text-[52px]">
             <span className="text-dimWhite">{about.name}</span>
           </h1>
         </motion.div>
@@ -51,7 +51,7 @@ const Hero = ({ about }) => {
             ease: "easeIn",
             delay: 1.3,
           }}
-          className={`${styles.paragraph}`}
+          className={`${styles.paragraph}  text-center sm:text-left`}
         >
           {about.description}
         </motion.p>
