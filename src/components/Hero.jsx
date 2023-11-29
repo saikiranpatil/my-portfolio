@@ -51,7 +51,7 @@ const Hero = ({ about }) => {
             ease: "easeIn",
             delay: 1.3,
           }}
-          className={`${styles.paragraph}  text-center sm:text-left`}
+          className={`${styles.paragraph}  text-center sm:text-left text-gray`}
         >
           {about.description}
         </motion.p>

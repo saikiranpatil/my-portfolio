@@ -9,7 +9,7 @@ module.exports = {
         primary: "#00ffaa",
         // primary: "#01cd74",
         dimWhite: "#E5FFFA",
-        slate: "#607175",
+        slate: "#b3bbc6",
         darkColor: "#03110F",
         // lightBgColor: "#01140E",
         solidBlue: "#0f1923",
